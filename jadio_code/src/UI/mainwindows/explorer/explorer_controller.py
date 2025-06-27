@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout
-from explorer.explorer_menu import ExplorerMenu
-from explorer.explorer_sidebar import ExplorerSidebar
+from .explorer_menu import ExplorerMenu
+from .explorer_sidebar import ExplorerSidebar
 
 class ExplorerController(QWidget):
     def __init__(self, parent=None):

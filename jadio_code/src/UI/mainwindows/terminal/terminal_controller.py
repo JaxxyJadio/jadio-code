@@ -1,8 +1,8 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QSplitter
 from PyQt6.QtCore import Qt
-from terminal.terminal_menu import TerminalMenu
-from terminal.terminal_window import TerminalWindow
-from terminal.terminal_shells import TerminalShells
+from .terminal_menu import TerminalMenu
+from .terminal_window import TerminalWindow
+from .terminal_shells import TerminalShells
 
 class TerminalController(QWidget):
     def __init__(self, parent=None):

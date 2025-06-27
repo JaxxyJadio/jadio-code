@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout
-from editor.editor_tabs import EditorTabs
-from editor.editor_topmenu import EditorTopMenu
-from editor.editor_code import EditorCode
+from .editor_tabs import EditorTabs
+from .editor_topmenu import EditorTopMenu
+from .editor_code import EditorCode
 
 class EditorController(QWidget):
     def __init__(self, parent=None):

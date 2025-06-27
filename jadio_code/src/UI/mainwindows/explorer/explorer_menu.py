@@ -1,4 +1,6 @@
-from PyQt6.QtWidgets import QWidget, QHBoxLayout, QPushButton, QMenu, QAction
+from PyQt6.QtWidgets import QWidget, QHBoxLayout, QPushButton, QMenu
+from PyQt6.QtGui import QAction
+
 
 class ExplorerMenu(QWidget):
     def __init__(self, parent=None):
