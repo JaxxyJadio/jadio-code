@@ -1,26 +1,30 @@
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QPushButton
+from styles import Styles
 
 class EditorTopMenu(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
+        # Apply centralized menu bar styles
+        self.setStyleSheet(Styles.get_menu_bar_style())
+
         layout = QHBoxLayout()
-        layout.setContentsMargins(2, 2, 2, 2)
+        layout.setContentsMargins(4, 4, 4, 4)
         layout.setSpacing(4)
 
-        # Example buttons (placeholders)
-        close_button = QPushButton("Close Tab")
-        split_button = QPushButton("Split View")
-        run_button = QPushButton("Run")
-        format_button = QPushButton("Format")
+        # Emoji buttons instead of text
+        buttons_config = [
+            ("❌", "Close Tab"),
+            ("⚡", "Split View"),
+            ("▶️", "Run"),
+            ("✨", "Format")
+        ]
 
-        # Add buttons to layout
-        layout.addWidget(close_button)
-        layout.addWidget(split_button)
-        layout.addWidget(run_button)
-        layout.addWidget(format_button)
+        for emoji, tooltip in buttons_config:
+            btn = QPushButton(emoji)
+            btn.setToolTip(tooltip)
+            layout.addWidget(btn)
 
         # Stretch to fill right side
         layout.addStretch()
-
         self.setLayout(layout)

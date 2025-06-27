@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout
-from .editor_tabs import EditorTabs
 from .editor_topmenu import EditorTopMenu
+from .editor_tabs import EditorTabs
 from .editor_code import EditorCode
 
 class EditorController(QWidget):
@@ -12,13 +12,13 @@ class EditorController(QWidget):
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)
 
-        # 1. Tabs at the very top
-        self.tabs = EditorTabs()
-        layout.addWidget(self.tabs)
-
-        # 2. Top menu bar with split/close/run etc
+        # 1. Top menu bar FIRST (above tabs)
         self.topmenu = EditorTopMenu()
         layout.addWidget(self.topmenu)
+
+        # 2. Tabs SECOND (below menu)
+        self.tabs = EditorTabs()
+        layout.addWidget(self.tabs)
 
         # 3. Actual code editing area
         self.code_area = EditorCode()

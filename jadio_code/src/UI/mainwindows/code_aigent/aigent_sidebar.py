@@ -1,54 +1,59 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton
-from PyQt6.QtCore import QSize
+from PyQt6.QtCore import Qt
+from styles import Styles
 
 
 class AigentSidebar(QWidget):
     """
-    The vertical grey sidebar attached on the far right of AIGENT.
-    Always rendered. Fixed width. Contains vertical stack of buttons.
-    Mirrors VS Code's Activity Bar but on the right.
+    VS Code Activity Bar style sidebar - vertical buttons on far right
     """
 
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        # Overall vertical layout for stacked buttons
-        layout = QVBoxLayout()
-        layout.setContentsMargins(4, 4, 4, 4)
-        layout.setSpacing(8)
+        # Apply centralized sidebar styles
+        self.setStyleSheet(Styles.get_sidebar_style())
 
-        # Create 5 placeholder buttons for now
+        # Fixed width like VS Code activity bar
+        self.setFixedWidth(48)
+
+        # Vertical layout for buttons
+        layout = QVBoxLayout()
+        layout.setContentsMargins(0, 8, 0, 8)
+        layout.setSpacing(0)
+
+        # AIGent activity buttons
+        buttons_config = [
+            ("🔍", "Search"),
+            ("🤖", "AI Chat"),
+            ("⚙️", "Settings"),
+            ("🔌", "Plugins"),
+            ("📊", "Analytics")
+        ]
+
         self.buttons = []
-        for i in range(1, 6):
-            btn = QPushButton(f"Btn {i}")
-            btn.setFixedHeight(40)
-            btn.setMinimumWidth(40)
-            btn.setMaximumWidth(50)
+        for icon, tooltip in buttons_config:
+            btn = QPushButton(icon)
             btn.setCheckable(True)
-            btn.setStyleSheet("""
-                QPushButton {
-                    background-color: #333;
-                    color: #eee;
-                    border: none;
-                    border-radius: 4px;
-                }
-                QPushButton:checked {
-                    background-color: #555;
-                }
-            """)
+            btn.setToolTip(tooltip)
+            btn.clicked.connect(lambda checked, t=tooltip: self.handle_button_click(t))
             layout.addWidget(btn)
             self.buttons.append(btn)
 
-        # Stretch to keep them top-aligned
+        # Stretch to push buttons to top
         layout.addStretch()
 
         self.setLayout(layout)
 
-        # Set fixed width for the sidebar itself
-        self.setMinimumWidth(50)
-        self.setMaximumWidth(60)
+        # Default: first button selected
+        if self.buttons:
+            self.buttons[0].setChecked(True)
 
-        # Example signal connections placeholder
-        # btn.clicked.connect(lambda: self.handleButton(i))
-        # Define handleButton() later to switch modes, etc.
-
+    def handle_button_click(self, button_name):
+        """Handle button clicks - switch AIGent modes"""
+        print(f"AIGent mode switched to: {button_name}")
+        
+        # Update button states (only one can be checked)
+        sender = self.sender()
+        for btn in self.buttons:
+            btn.setChecked(btn == sender)

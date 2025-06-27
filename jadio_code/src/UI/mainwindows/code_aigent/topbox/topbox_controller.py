@@ -1,19 +1,13 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QStackedWidget
-from code_aigent.topbox.topbox_modelsettings import TopboxModelSettings
-from code_aigent.topbox.topbox_lan import TopboxLan
-from code_aigent.topbox.topbox_tools import TopboxTools
-from code_aigent.topbox.topbox_context import TopboxContext
+from .topbox_modelsettings import TopboxModelSettings
+from .topbox_lan import TopboxLan
+from .topbox_tools import TopboxTools
+from .topbox_context import TopboxContext
 
 
 class TopBox(QWidget):
     """
-    The ORANGE section of Code.AIGent.
-    Contains:
-      - AI_MODEL_SETTINGS
-      - LAN_SETTINGS
-      - AI_TOOL_SET
-      - LONG_CONTEXT
-    Shows only ONE of these at a time.
+    The TopBox with emoji buttons and proper width
     """
 
     def __init__(self, parent=None):
@@ -25,40 +19,51 @@ class TopBox(QWidget):
         layout.setSpacing(0)
 
         # -------------------------------
-        # 1️⃣ Button bar (tab selector)
+        # 1️⃣ Button bar (tab selector) with emojis
         # -------------------------------
         button_bar = QHBoxLayout()
         button_bar.setContentsMargins(4, 4, 4, 4)
-        button_bar.setSpacing(6)
+        button_bar.setSpacing(4)
 
         self.buttons = []
 
+        # Emoji buttons instead of text
         sections = [
-            ("Model Settings", 0),
-            ("LAN Settings", 1),
-            ("Tools", 2),
-            ("Context", 3)
+            ("🤖", 0),  # AI Model Settings
+            ("🌐", 1),  # LAN Settings  
+            ("🔧", 2),  # Tools
+            ("📄", 3)   # Context
         ]
 
-        for label, index in sections:
-            btn = QPushButton(label)
+        for emoji, index in sections:
+            btn = QPushButton(emoji)
             btn.setCheckable(True)
             btn.setStyleSheet("""
                 QPushButton {
                     background-color: #444;
                     color: white;
                     border: none;
-                    padding: 4px 8px;
+                    padding: 8px 12px;
                     border-radius: 4px;
+                    font-size: 16px;
+                    min-width: 40px;
+                    max-width: 50px;
                 }
                 QPushButton:checked {
                     background-color: #007acc;
+                }
+                QPushButton:hover {
+                    background-color: #555;
+                }
+                QPushButton:checked:hover {
+                    background-color: #1177bb;
                 }
             """)
             btn.clicked.connect(lambda checked, i=index: self.show_panel(i))
             button_bar.addWidget(btn)
             self.buttons.append(btn)
 
+        # Don't stretch - keep buttons compact
         button_bar.addStretch()
 
         # -------------------------------
