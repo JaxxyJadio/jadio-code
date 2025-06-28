@@ -30,10 +30,10 @@ Homepage = "https://pypi.org/project/jadio/"
 Repository = "https://github.com/JaxxyJadio/jadio"
 
 [project.scripts]
-jadio = "jadio.cli.main:main"
+jadio = "jadio_code.cli.main:main"
 
 [tool.hatch.version]
-path = "src/jadio/__init__.py"
+path = "src/jadio_code/__init__.py"
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -43,4 +43,4 @@ include = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/jadio"]
+packages = ["src/jadio_code"]
