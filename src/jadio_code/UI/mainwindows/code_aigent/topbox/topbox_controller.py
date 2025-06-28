@@ -7,7 +7,7 @@ from .topbox_context import TopboxContext
 
 class TopBox(QWidget):
     """
-    The TopBox with emoji buttons and proper width
+    The TopBox with text buttons and proper width
     """
 
     def __init__(self, parent=None):
@@ -19,7 +19,7 @@ class TopBox(QWidget):
         layout.setSpacing(0)
 
         # -------------------------------
-        # 1️⃣ Button bar (tab selector) with emojis
+        # 1️⃣ Button bar (tab selector) with text labels
         # -------------------------------
         button_bar = QHBoxLayout()
         button_bar.setContentsMargins(4, 4, 4, 4)
@@ -27,38 +27,17 @@ class TopBox(QWidget):
 
         self.buttons = []
 
-        # Emoji buttons instead of text
+        # Text buttons instead of emojis
         sections = [
-            ("🤖", 0),  # AI Model Settings
-            ("🌐", 1),  # LAN Settings  
-            ("🔧", 2),  # Tools
-            ("📄", 3)   # Context
+            ("Model", 0),    # AI Model Settings
+            ("LAN", 1),      # LAN Settings  
+            ("Tools", 2),    # Tools
+            ("Context", 3)   # Context
         ]
 
-        for emoji, index in sections:
-            btn = QPushButton(emoji)
+        for label, index in sections:
+            btn = QPushButton(label)
             btn.setCheckable(True)
-            btn.setStyleSheet("""
-                QPushButton {
-                    background-color: #444;
-                    color: white;
-                    border: none;
-                    padding: 8px 12px;
-                    border-radius: 4px;
-                    font-size: 16px;
-                    min-width: 40px;
-                    max-width: 50px;
-                }
-                QPushButton:checked {
-                    background-color: #007acc;
-                }
-                QPushButton:hover {
-                    background-color: #555;
-                }
-                QPushButton:checked:hover {
-                    background-color: #1177bb;
-                }
-            """)
             btn.clicked.connect(lambda checked, i=index: self.show_panel(i))
             button_bar.addWidget(btn)
             self.buttons.append(btn)

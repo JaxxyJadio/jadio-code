@@ -1,91 +1,99 @@
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QPushButton
-from PyQt6.QtCore import Qt
-from styles import Styles
+from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtGui import QIcon, QPixmap, QPainter
+from PyQt6.QtSvg import QSvgRenderer
+from style.colors import Colors
+from style.icons import Icons
 
 class ExplorerMenu(QWidget):
     """
-    Collapsible horizontal menu for Explorer
+    Collapsible horizontal menu for Explorer – buttons are exactly icon-sized (20×20) with 2px gutters,
+    and use the same red hover/pressed colors as the sidebar.
     """
-
     def __init__(self, parent=None):
         super().__init__(parent)
-        
-        # Set fixed height and apply centralized styles
-        self.setFixedHeight(40)
-        self.setStyleSheet(Styles.get_menu_bar_style())
-
-        # Initially collapsed state
+        self.setFixedHeight(24)
         self.expanded = False
-        layout = QHBoxLayout()
-        layout.setContentsMargins(4, 4, 4, 4)
-        layout.setSpacing(2)
-        self.create_collapsed_layout(layout)
-        self.setLayout(layout)
 
-    def create_collapsed_layout(self, layout):
-        """Create the collapsed state with just the main toggle button"""
-        self.clear_layout(layout)
-        
-        # Main toggle button
-        self.toggle_button = QPushButton("📁 ▼")
-        self.toggle_button.clicked.connect(self.toggle_menu)
-        layout.addWidget(self.toggle_button)
-        layout.addStretch()
+        self.layout = QHBoxLayout(self)
+        self.layout.setContentsMargins(2, 2, 2, 2)
+        self.layout.setSpacing(2)
 
-    def create_expanded_layout(self, layout):
-        """Create the expanded state with all buttons"""
-        self.clear_layout(layout)
+        self.create_collapsed_layout()
 
-        # Toggle button (now shows up arrow)
-        self.toggle_button = QPushButton("📁 ▲")
-        self.toggle_button.clicked.connect(self.toggle_menu)
-        layout.addWidget(self.toggle_button)
+    def create_collapsed_layout(self):
+        self._clear_layout()
+        btn = self._make_button(Icons.chevron_down(), "Expand")
+        btn.clicked.connect(self.toggle_menu)
+        self.layout.addWidget(btn)
+        self.layout.addStretch()
 
-        # All the explorer action buttons
-        buttons_config = [
-            ("📄", self.new_file),
-            ("📁", self.new_folder), 
-            ("🔄", self.refresh),
-            ("📂", self.collapse_all),
-            ("⚙️", self.settings)
-        ]
+    def create_expanded_layout(self):
+        self._clear_layout()
+        toggle = self._make_button(Icons.chevron_up(), "Collapse")
+        toggle.clicked.connect(self.toggle_menu)
+        self.layout.addWidget(toggle)
 
-        for emoji, handler in buttons_config:
-            btn = QPushButton(emoji)
-            btn.clicked.connect(handler)
-            layout.addWidget(btn)
+        for tip, svg in [
+            ("New File",   Icons.new_file()),
+            ("New Folder", Icons.new_folder()),
+            ("Refresh",    Icons.refresh()),
+            ("Collapse",   Icons.load_icon(Icons.COLLAPSE_NAMES, "collapse")),
+            ("Settings",   Icons.settings()),
+        ]:
+            b = self._make_button(svg, tip)
+            self.layout.addWidget(b)
 
-        layout.addStretch()
+        self.layout.addStretch()
 
     def toggle_menu(self):
-        """Toggle between collapsed and expanded states"""
         self.expanded = not self.expanded
-        layout = self.layout()
-        
         if self.expanded:
-            self.create_expanded_layout(layout)
+            self.create_expanded_layout()
         else:
-            self.create_collapsed_layout(layout)
+            self.create_collapsed_layout()
 
-    def clear_layout(self, layout):
-        """Clear all widgets from layout"""
-        while layout.count():
-            child = layout.takeAt(0)
-            if child.widget():
-                child.widget().deleteLater()
+    def _make_button(self, svg_content: str, tooltip: str) -> QPushButton:
+        btn = QPushButton()
+        btn.setToolTip(tooltip)
+        btn.setFlat(True)
+        btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        btn.setFixedSize(20, 20)
+        btn.setStyleSheet(f"""
+            QPushButton {{
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                margin: 2px;
+                min-width: 20px; max-width: 20px;
+                min-height: 20px; max-height: 20px;
+            }}
+            QPushButton:hover {{
+                background-color: rgba(255, 0, 0, 0.16);
+            }}
+            QPushButton:pressed {{
+                background-color: rgba(255, 0, 0, 0.32);
+            }}
+        """)
+        btn.setIcon(self._svg_to_qicon(svg_content, Colors.TEXT_PRIMARY))
+        btn.setIconSize(QSize(20, 20))
+        return btn
 
-    # Button handlers
-    def new_file(self):
-        print("New File clicked")
+    def _svg_to_qicon(self, svg_content: str, color: str) -> QIcon:
+        if 'currentColor' in svg_content:
+            svg_content = svg_content.replace('currentColor', color)
+        data = svg_content.encode('utf-8')
+        renderer = QSvgRenderer(data)
+        pix = QPixmap(20, 20)
+        pix.fill(Qt.GlobalColor.transparent)
+        painter = QPainter(pix)
+        renderer.render(painter)
+        painter.end()
+        return QIcon(pix)
 
-    def new_folder(self):
-        print("New Folder clicked")
-
-    def refresh(self):
-        print("Refresh clicked")
-
-    def collapse_all(self):
-        print("Collapse All clicked")
-
-    def settings(self):
-        print("Settings clicked")
+    def _clear_layout(self):
+        while self.layout.count():
+            item = self.layout.takeAt(0)
+            w = item.widget()
+            if w:
+                w.deleteLater()

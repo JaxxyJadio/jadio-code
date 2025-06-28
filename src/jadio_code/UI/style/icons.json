@@ -1,0 +1,71 @@
+{
+  "description": "JADIO Code Icon Registry - Defines all available icon modules",
+  "version": "1.0.0",
+  "icon_directory": "icons",
+  "icon_modules": [
+    {
+      "name": "language_icons",
+      "file": "language_icons.py",
+      "class": "LanguageIcons",
+      "description": "Programming languages and frameworks",
+      "categories": ["python", "javascript", "typescript", "html", "css", "react", "vue", "docker", "git"]
+    },
+    {
+      "name": "editor_icons", 
+      "file": "editor_icons.py",
+      "class": "EditorIcons",
+      "description": "Editor operations and IDE functionality",
+      "categories": ["file_operations", "edit_operations", "code_operations", "navigation"]
+    },
+    {
+      "name": "file_icons",
+      "file": "file_icons.py", 
+      "class": "FileIcons",
+      "description": "File and folder icons",
+      "categories": ["folders", "config_files", "generic_files"]
+    },
+    {
+      "name": "ui_icons",
+      "file": "ui_icons.py",
+      "class": "UIIcons", 
+      "description": "UI controls and navigation",
+      "categories": ["navigation", "window_controls", "basic_actions", "layout"]
+    },
+    {
+      "name": "panel_icons",
+      "file": "panel_icons.py",
+      "class": "PanelIcons",
+      "description": "Sidebar panels and IDE sections",
+      "categories": ["sidebar_panels", "terminal_variants"]
+    },
+    {
+      "name": "git_icons",
+      "file": "git_icons.py",
+      "class": "GitIcons", 
+      "description": "Git and version control operations",
+      "categories": ["git_operations", "file_status"]
+    },
+    {
+      "name": "status_icons",
+      "file": "status_icons.py",
+      "class": "StatusIcons",
+      "description": "Status and notification icons", 
+      "categories": ["status_indicators", "notifications"]
+    },
+    {
+      "name": "general_icons",
+      "file": "general_icons.py",
+      "class": "GeneralIcons",
+      "description": "General utility and AI icons",
+      "categories": ["ai_chat", "utilities"]
+    }
+  ],
+  "fallback_config": {
+    "width": 16,
+    "height": 16,
+    "background_color": "#404040",
+    "border_color": "#666",
+    "text_color": "#ffffff",
+    "font_size": 6
+  }
+}

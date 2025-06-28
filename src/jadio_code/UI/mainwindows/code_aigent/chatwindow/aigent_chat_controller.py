@@ -20,7 +20,6 @@ class ChatWindow(QWidget):
 
         # Summary
         self.summary = QLabel("Summary: [No summary yet]")
-        self.summary.setStyleSheet("background-color: #222; color: #ccc; padding: 4px;")
 
         layout.addWidget(self.chat_history, stretch=1)
         layout.addWidget(self.summary)

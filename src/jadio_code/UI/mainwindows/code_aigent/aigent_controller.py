@@ -13,14 +13,6 @@ class AigentController(QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        
-        # Set background color to distinguish the panel
-        self.setStyleSheet("""
-            AigentController {
-                background-color: #1e1e1e;
-                border-left: 1px solid #333;
-            }
-        """)
 
         # Track terminal state
         self.terminal_expanded = False
@@ -54,19 +46,10 @@ class AigentController(QWidget):
 
         # 4. Expandable Terminal (hidden by default)
         self.expanded_terminal = QTextEdit()
-        self.expanded_terminal.setStyleSheet("""
-            QTextEdit {
-                background-color: #1e1e1e;
-                color: #cccccc;
-                border: 1px solid #3e3e42;
-                border-radius: 4px;
-                font-family: 'Consolas', monospace;
-                font-size: 12px;
-                padding: 8px;
-            }
-        """)
         self.expanded_terminal.setPlaceholderText("Expanded AIGent Terminal...")
+        self.expanded_terminal.setObjectName("terminal")  # For terminal-specific styling
         self.expanded_terminal.hide()  # Hidden by default
+        self.expanded_terminal.setFixedHeight(0)  # Start with 0 height
         self.content_layout.addWidget(self.expanded_terminal)
 
         # 5. BottomBox (FIXED height) - Input area
@@ -88,15 +71,17 @@ class AigentController(QWidget):
 
         self.setLayout(main_layout)
 
-        # Connect expand terminal button
+        # Connect expand terminal button (with delay to ensure BottomBox is ready)
         self.connect_expand_button()
 
     def connect_expand_button(self):
         """Connect the expand terminal button from BottomBox"""
-        # We'll connect this after BottomBox is created
-        if hasattr(self.bottombox, 'expand_button'):
-            self.bottombox.expand_button.clicked.disconnect()  # Remove old connection
-            self.bottombox.expand_button.clicked.connect(self.toggle_terminal)
+        try:
+            if hasattr(self.bottombox, 'expand_button'):
+                self.bottombox.expand_button.clicked.connect(self.toggle_terminal)
+        except AttributeError:
+            # Button might not be ready yet, that's ok
+            pass
 
     def toggle_terminal(self):
         """Toggle the expanded terminal"""
@@ -104,11 +89,13 @@ class AigentController(QWidget):
             # Close terminal
             self.expanded_terminal.hide()
             self.expanded_terminal.setFixedHeight(0)
-            self.bottombox.expand_button.setText("↗\nExpand\nTerminal")
+            if hasattr(self.bottombox, 'expand_button'):
+                self.bottombox.expand_button.setText("Expand Terminal")
             self.terminal_expanded = False
         else:
             # Open terminal
             self.expanded_terminal.show()
             self.expanded_terminal.setFixedHeight(250)  # 250px as requested
-            self.bottombox.expand_button.setText("↙\nClose\nTerminal")
+            if hasattr(self.bottombox, 'expand_button'):
+                self.bottombox.expand_button.setText("Close Terminal")
             self.terminal_expanded = True

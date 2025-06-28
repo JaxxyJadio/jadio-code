@@ -1,0 +1,234 @@
+{
+  "description": "JADIO Code Signature Color Palette - Unique shades for professional IDE theming",
+  "version": "1.0.0",
+  "brand": "JADIO Labs",
+  "theme_philosophy": "Modern, high-contrast, developer-focused with distinctive personality",
+  
+  "colors": {
+    
+    "blacks": {
+      "jadio_void": "#0A0A0A",
+      "jadio_midnight": "#121215",
+      "jadio_obsidian": "#1A1A1E",
+      "jadio_charcoal": "#252529",
+      "jadio_carbon": "#2F2F35",
+      "jadio_graphite": "#3A3A42"
+    },
+    
+    "whites": {
+      "jadio_pure": "#FEFEFE",
+      "jadio_pearl": "#F8F9FA",
+      "jadio_ivory": "#F5F6F8",
+      "jadio_cream": "#F2F3F5",
+      "jadio_linen": "#EEEEF2",
+      "jadio_ghost": "#E8E9ED"
+    },
+    
+    "greys": {
+      "jadio_platinum": "#E2E3E7",
+      "jadio_silver": "#D4D5DA",
+      "jadio_steel": "#C2C3C9",
+      "jadio_slate": "#A8A9B1",
+      "jadio_concrete": "#8F9099",
+      "jadio_ash": "#767782",
+      "jadio_smoke": "#5D5E6B",
+      "jadio_storm": "#4A4B57",
+      "jadio_shadow": "#373843",
+      "jadio_iron": "#2A2B35"
+    },
+    
+    "reds": {
+      "jadio_crimson": "#E63946",
+      "jadio_ruby": "#DC2626",
+      "jadio_cherry": "#B91C1C",
+      "jadio_cardinal": "#991B1B",
+      "jadio_burgundy": "#7F1D1D",
+      "jadio_wine": "#651D1D",
+      "jadio_coral": "#FF6B6B",
+      "jadio_rose": "#F87171",
+      "jadio_salmon": "#FDA4AF",
+      "jadio_blush": "#FECACA"
+    },
+    
+    "accent_blues": {
+      "jadio_electric": "#3B82F6",
+      "jadio_azure": "#2563EB",
+      "jadio_cobalt": "#1D4ED8",
+      "jadio_royal": "#1E40AF",
+      "jadio_navy": "#1E3A8A",
+      "jadio_sapphire": "#1E293B",
+      "jadio_cyan": "#06B6D4",
+      "jadio_teal": "#0891B2",
+      "jadio_aqua": "#0E7490"
+    },
+    
+    "accent_greens": {
+      "jadio_emerald": "#10B981",
+      "jadio_forest": "#059669",
+      "jadio_mint": "#34D399",
+      "jadio_lime": "#84CC16",
+      "jadio_olive": "#65A30D",
+      "jadio_sage": "#16A34A",
+      "jadio_pine": "#166534",
+      "jadio_moss": "#14532D"
+    },
+    
+    "accent_yellows": {
+      "jadio_gold": "#F59E0B",
+      "jadio_amber": "#D97706",
+      "jadio_honey": "#FBBF24",
+      "jadio_sun": "#FDE047",
+      "jadio_cream_accent": "#FEF3C7",
+      "jadio_bronze": "#92400E"
+    },
+    
+    "accent_purples": {
+      "jadio_violet": "#8B5CF6",
+      "jadio_indigo": "#6366F1",
+      "jadio_lavender": "#A78BFA",
+      "jadio_amethyst": "#7C3AED",
+      "jadio_plum": "#6B21A8",
+      "jadio_grape": "#581C87"
+    },
+    
+    "accent_oranges": {
+      "jadio_tangerine": "#FF6B35",
+      "jadio_sunset": "#F97316",
+      "jadio_peach": "#FB923C",
+      "jadio_copper": "#EA580C",
+      "jadio_rust": "#C2410C",
+      "jadio_flame": "#9A3412"
+    },
+    
+    "semantic_colors": {
+      "jadio_success": "#22C55E",
+      "jadio_warning": "#EAB308",
+      "jadio_error": "#EF4444",
+      "jadio_info": "#3B82F6",
+      "jadio_critical": "#DC2626",
+      "jadio_pending": "#F59E0B"
+    },
+    
+    "editor_specifics": {
+      "jadio_syntax_string": "#A3E635",
+      "jadio_syntax_number": "#F472B6",
+      "jadio_syntax_keyword": "#60A5FA",
+      "jadio_syntax_comment": "#6B7280",
+      "jadio_syntax_function": "#FBBF24",
+      "jadio_syntax_variable": "#34D399",
+      "jadio_syntax_type": "#C084FC",
+      "jadio_syntax_operator": "#FB7185",
+      "jadio_cursor": "#FBBF24",
+      "jadio_selection": "#374151",
+      "jadio_line_highlight": "#1F2937",
+      "jadio_bracket_match": "#4338CA"
+    },
+    
+    "ui_elements": {
+      "jadio_border": "#374151",
+      "jadio_border_light": "#4B5563",
+      "jadio_border_dark": "#1F2937",
+      "jadio_divider": "#374151",
+      "jadio_hover": "#4B5563",
+      "jadio_active": "#6B7280",
+      "jadio_focus": "#3B82F6",
+      "jadio_disabled": "#6B7280",
+      "jadio_sidebar": "#1A1A1E",
+      "jadio_panel": "#252529",
+      "jadio_toolbar": "#2F2F35",
+      "jadio_statusbar": "#121215"
+    },
+    
+    "git_colors": {
+      "jadio_git_added": "#22C55E",
+      "jadio_git_modified": "#F59E0B",
+      "jadio_git_deleted": "#EF4444",
+      "jadio_git_untracked": "#8B5CF6",
+      "jadio_git_ignored": "#6B7280",
+      "jadio_git_conflict": "#DC2626",
+      "jadio_git_staged": "#10B981",
+      "jadio_git_unstaged": "#F97316"
+    },
+    
+    "terminal_colors": {
+      "jadio_term_black": "#0A0A0A",
+      "jadio_term_red": "#E63946",
+      "jadio_term_green": "#22C55E",
+      "jadio_term_yellow": "#F59E0B",
+      "jadio_term_blue": "#3B82F6",
+      "jadio_term_magenta": "#8B5CF6",
+      "jadio_term_cyan": "#06B6D4",
+      "jadio_term_white": "#F8F9FA",
+      "jadio_term_bright_black": "#4B5563",
+      "jadio_term_bright_red": "#F87171",
+      "jadio_term_bright_green": "#4ADE80",
+      "jadio_term_bright_yellow": "#FBBF24",
+      "jadio_term_bright_blue": "#60A5FA",
+      "jadio_term_bright_magenta": "#A78BFA",
+      "jadio_term_bright_cyan": "#22D3EE",
+      "jadio_term_bright_white": "#FEFEFE"
+    },
+    
+    "transparency_variants": {
+      "jadio_overlay_10": "#0A0A0A1A",
+      "jadio_overlay_20": "#0A0A0A33",
+      "jadio_overlay_30": "#0A0A0A4D",
+      "jadio_overlay_40": "#0A0A0A66",
+      "jadio_overlay_50": "#0A0A0A80",
+      "jadio_overlay_60": "#0A0A0A99",
+      "jadio_overlay_70": "#0A0A0AB3",
+      "jadio_overlay_80": "#0A0A0ACC",
+      "jadio_overlay_90": "#0A0A0AE6",
+      "jadio_glass_light": "#FEFEFE0D",
+      "jadio_glass_medium": "#FEFEFE1A",
+      "jadio_glass_heavy": "#FEFEFE26"
+    }
+  },
+  
+  "color_schemes": {
+    "dark_theme": {
+      "background": "#0A0A0A",
+      "surface": "#121215", 
+      "surface_variant": "#1A1A1E",
+      "primary": "#3B82F6",
+      "primary_variant": "#2563EB",
+      "secondary": "#E63946",
+      "on_background": "#F8F9FA",
+      "on_surface": "#E8E9ED",
+      "on_primary": "#FEFEFE",
+      "accent": "#FBBF24"
+    },
+    
+    "light_theme": {
+      "background": "#FEFEFE",
+      "surface": "#F8F9FA",
+      "surface_variant": "#F2F3F5", 
+      "primary": "#2563EB",
+      "primary_variant": "#1D4ED8",
+      "secondary": "#DC2626",
+      "on_background": "#121215",
+      "on_surface": "#252529",
+      "on_primary": "#FEFEFE",
+      "accent": "#F59E0B"
+    },
+    
+    "high_contrast": {
+      "background": "#0A0A0A",
+      "surface": "#FEFEFE",
+      "primary": "#FBBF24",
+      "secondary": "#E63946",
+      "accent": "#22C55E",
+      "text": "#FEFEFE",
+      "border": "#FEFEFE"
+    }
+  },
+  
+  "usage_guidelines": {
+    "primary_brand": "Use jadio_crimson (#E63946) as primary brand color",
+    "background_hierarchy": "jadio_void → jadio_midnight → jadio_obsidian → jadio_charcoal",
+    "text_hierarchy": "jadio_pure → jadio_pearl → jadio_ivory → jadio_platinum",
+    "accent_usage": "Use jadio_electric for interactive elements, jadio_gold for highlights",
+    "semantic_consistency": "Always use semantic colors for status indicators",
+    "contrast_requirements": "Ensure 4.5:1 contrast ratio minimum for text readability"
+  }
+}

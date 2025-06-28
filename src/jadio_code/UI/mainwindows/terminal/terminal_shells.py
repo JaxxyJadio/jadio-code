@@ -1,4 +1,6 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton
+from PyQt6.QtCore import Qt
+from style.buttons import Buttons
 
 class TerminalShells(QWidget):
     def __init__(self, parent=None):
@@ -6,13 +8,18 @@ class TerminalShells(QWidget):
 
         layout = QVBoxLayout()
         layout.setContentsMargins(2, 2, 2, 2)
-        layout.setSpacing(4)
+        layout.setSpacing(2)
 
-        # Example hard-coded shell list for now
-        layout.addWidget(QPushButton("Shell 1"))
-        layout.addWidget(QPushButton("Shell 2"))
-        layout.addWidget(QPushButton("Shell 3"))
+        for label in ["Shell 1", "Shell 2", "Shell 3"]:
+            btn = QPushButton(label)
+            btn.setCursor(Qt.CursorShape.PointingHandCursor)
+            btn.setFixedHeight(32)
+            btn.setFlat(True)
+            btn.setCheckable(True)
+            layout.addWidget(btn)
 
         layout.addStretch()
-
         self.setLayout(layout)
+
+        # Apply your centralized button QSS
+        self.setStyleSheet(Buttons.get_button_styles())

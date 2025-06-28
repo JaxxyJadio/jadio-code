@@ -1,0 +1,275 @@
+{
+  "description": "JADIO Code Button Registry - Complete catalog of all IDE buttons with unique IDs",
+  "version": "1.0.0",
+  "total_buttons": 150,
+  "last_updated": "2025-01-01",
+  
+  "categories": {
+    "file_operations": {
+      "description": "File and folder operations",
+      "buttons": {
+        "1": { "name": "new_file", "label": "New File", "shortcut": "Ctrl+N", "icon": "newfile.svg", "tooltip": "Create a new file" },
+        "2": { "name": "new_folder", "label": "New Folder", "shortcut": "Ctrl+Shift+N", "icon": "newfolder.svg", "tooltip": "Create a new folder" },
+        "3": { "name": "open_file", "label": "Open File", "shortcut": "Ctrl+O", "icon": "open.svg", "tooltip": "Open an existing file" },
+        "4": { "name": "open_folder", "label": "Open Folder", "shortcut": "Ctrl+K Ctrl+O", "icon": "folderopen.svg", "tooltip": "Open a folder" },
+        "5": { "name": "save", "label": "Save", "shortcut": "Ctrl+S", "icon": "save.svg", "tooltip": "Save current file" },
+        "6": { "name": "save_as", "label": "Save As", "shortcut": "Ctrl+Shift+S", "icon": "saveas.svg", "tooltip": "Save file with new name" },
+        "7": { "name": "save_all", "label": "Save All", "shortcut": "Ctrl+K S", "icon": "saveall.svg", "tooltip": "Save all open files" },
+        "8": { "name": "close_file", "label": "Close File", "shortcut": "Ctrl+W", "icon": "close.svg", "tooltip": "Close current file" },
+        "9": { "name": "close_all", "label": "Close All", "shortcut": "Ctrl+K Ctrl+W", "icon": "closeall.svg", "tooltip": "Close all open files" },
+        "10": { "name": "recent_files", "label": "Recent Files", "shortcut": "Ctrl+R", "icon": "history.svg", "tooltip": "Open recent files" }
+      }
+    },
+    
+    "edit_operations": {
+      "description": "Text editing and manipulation",
+      "buttons": {
+        "11": { "name": "undo", "label": "Undo", "shortcut": "Ctrl+Z", "icon": "undo.svg", "tooltip": "Undo last action" },
+        "12": { "name": "redo", "label": "Redo", "shortcut": "Ctrl+Y", "icon": "redo.svg", "tooltip": "Redo last undone action" },
+        "13": { "name": "cut", "label": "Cut", "shortcut": "Ctrl+X", "icon": "cut.svg", "tooltip": "Cut selected text" },
+        "14": { "name": "copy", "label": "Copy", "shortcut": "Ctrl+C", "icon": "copy.svg", "tooltip": "Copy selected text" },
+        "15": { "name": "paste", "label": "Paste", "shortcut": "Ctrl+V", "icon": "paste.svg", "tooltip": "Paste from clipboard" },
+        "16": { "name": "select_all", "label": "Select All", "shortcut": "Ctrl+A", "icon": "selectall.svg", "tooltip": "Select all text" },
+        "17": { "name": "find", "label": "Find", "shortcut": "Ctrl+F", "icon": "find.svg", "tooltip": "Find text in file" },
+        "18": { "name": "replace", "label": "Replace", "shortcut": "Ctrl+H", "icon": "replace.svg", "tooltip": "Find and replace text" },
+        "19": { "name": "find_in_files", "label": "Find in Files", "shortcut": "Ctrl+Shift+F", "icon": "searchpanel.svg", "tooltip": "Search across all files" },
+        "20": { "name": "goto_line", "label": "Go to Line", "shortcut": "Ctrl+G", "icon": "gotoline.svg", "tooltip": "Go to specific line number" }
+      }
+    },
+    
+    "code_operations": {
+      "description": "Code execution and debugging",
+      "buttons": {
+        "21": { "name": "run_code", "label": "Run", "shortcut": "F5", "icon": "run.svg", "tooltip": "Run current file" },
+        "22": { "name": "debug_code", "label": "Debug", "shortcut": "F9", "icon": "debug.svg", "tooltip": "Start debugging" },
+        "23": { "name": "stop_execution", "label": "Stop", "shortcut": "Shift+F5", "icon": "stop.svg", "tooltip": "Stop code execution" },
+        "24": { "name": "restart", "label": "Restart", "shortcut": "Ctrl+Shift+F5", "icon": "restart.svg", "tooltip": "Restart execution" },
+        "25": { "name": "step_over", "label": "Step Over", "shortcut": "F10", "icon": "stepover.svg", "tooltip": "Step over next line" },
+        "26": { "name": "step_into", "label": "Step Into", "shortcut": "F11", "icon": "stepinto.svg", "tooltip": "Step into function" },
+        "27": { "name": "step_out", "label": "Step Out", "shortcut": "Shift+F11", "icon": "stepout.svg", "tooltip": "Step out of function" },
+        "28": { "name": "toggle_breakpoint", "label": "Toggle Breakpoint", "shortcut": "F9", "icon": "breakpoint.svg", "tooltip": "Add/remove breakpoint" },
+        "29": { "name": "build_project", "label": "Build", "shortcut": "Ctrl+Shift+B", "icon": "build.svg", "tooltip": "Build project" },
+        "30": { "name": "deploy", "label": "Deploy", "shortcut": "", "icon": "deploy.svg", "tooltip": "Deploy application" }
+      }
+    },
+    
+    "code_tools": {
+      "description": "Code analysis and formatting tools",
+      "buttons": {
+        "31": { "name": "format_document", "label": "Format Document", "shortcut": "Shift+Alt+F", "icon": "format.svg", "tooltip": "Format current document" },
+        "32": { "name": "format_selection", "label": "Format Selection", "shortcut": "Ctrl+K Ctrl+F", "icon": "formatselection.svg", "tooltip": "Format selected code" },
+        "33": { "name": "lint_code", "label": "Lint", "shortcut": "", "icon": "lint.svg", "tooltip": "Run code linter" },
+        "34": { "name": "go_to_definition", "label": "Go to Definition", "shortcut": "F12", "icon": "gotodefinition.svg", "tooltip": "Go to symbol definition" },
+        "35": { "name": "peek_definition", "label": "Peek Definition", "shortcut": "Alt+F12", "icon": "peekdefinition.svg", "tooltip": "Peek at definition" },
+        "36": { "name": "find_references", "label": "Find References", "shortcut": "Shift+F12", "icon": "findreferences.svg", "tooltip": "Find all references" },
+        "37": { "name": "rename_symbol", "label": "Rename Symbol", "shortcut": "F2", "icon": "rename.svg", "tooltip": "Rename symbol" },
+        "38": { "name": "refactor", "label": "Refactor", "shortcut": "Ctrl+Shift+R", "icon": "refactor.svg", "tooltip": "Refactor code" },
+        "39": { "name": "quick_fix", "label": "Quick Fix", "shortcut": "Ctrl+.", "icon": "lightbulb.svg", "tooltip": "Show quick fixes" },
+        "40": { "name": "comment_toggle", "label": "Toggle Comment", "shortcut": "Ctrl+/", "icon": "comment.svg", "tooltip": "Toggle line comment" }
+      }
+    },
+    
+    "navigation": {
+      "description": "Editor and file navigation",
+      "buttons": {
+        "41": { "name": "go_back", "label": "Go Back", "shortcut": "Alt+Left", "icon": "goback.svg", "tooltip": "Go to previous location" },
+        "42": { "name": "go_forward", "label": "Go Forward", "shortcut": "Alt+Right", "icon": "goforward.svg", "tooltip": "Go to next location" },
+        "43": { "name": "next_tab", "label": "Next Tab", "shortcut": "Ctrl+Tab", "icon": "nexttab.svg", "tooltip": "Switch to next tab" },
+        "44": { "name": "previous_tab", "label": "Previous Tab", "shortcut": "Ctrl+Shift+Tab", "icon": "previoustab.svg", "tooltip": "Switch to previous tab" },
+        "45": { "name": "split_editor_right", "label": "Split Right", "shortcut": "Ctrl+\\", "icon": "splitright.svg", "tooltip": "Split editor to the right" },
+        "46": { "name": "split_editor_down", "label": "Split Down", "shortcut": "Ctrl+Shift+\\", "icon": "splitdown.svg", "tooltip": "Split editor downward" },
+        "47": { "name": "close_split", "label": "Close Split", "shortcut": "Ctrl+Shift+W", "icon": "closesplit.svg", "tooltip": "Close editor split" },
+        "48": { "name": "toggle_sidebar", "label": "Toggle Sidebar", "shortcut": "Ctrl+B", "icon": "sidebar.svg", "tooltip": "Show/hide sidebar" },
+        "49": { "name": "toggle_panel", "label": "Toggle Panel", "shortcut": "Ctrl+J", "icon": "panel.svg", "tooltip": "Show/hide bottom panel" },
+        "50": { "name": "zen_mode", "label": "Zen Mode", "shortcut": "Ctrl+K Z", "icon": "zenmode.svg", "tooltip": "Enter distraction-free mode" }
+      }
+    },
+    
+    "sidebar_panels": {
+      "description": "IDE sidebar panel toggles",
+      "buttons": {
+        "51": { "name": "explorer_panel", "label": "Explorer", "shortcut": "Ctrl+Shift+E", "icon": "explorer.svg", "tooltip": "Show file explorer" },
+        "52": { "name": "search_panel", "label": "Search", "shortcut": "Ctrl+Shift+F", "icon": "searchpanel.svg", "tooltip": "Show search panel" },
+        "53": { "name": "git_panel", "label": "Source Control", "shortcut": "Ctrl+Shift+G", "icon": "sourcecontrol.svg", "tooltip": "Show git panel" },
+        "54": { "name": "debug_panel", "label": "Run & Debug", "shortcut": "Ctrl+Shift+D", "icon": "rundebug.svg", "tooltip": "Show debug panel" },
+        "55": { "name": "extensions_panel", "label": "Extensions", "shortcut": "Ctrl+Shift+X", "icon": "extensions.svg", "tooltip": "Show extensions panel" },
+        "56": { "name": "ai_panel", "label": "AI Assistant", "shortcut": "Ctrl+Shift+A", "icon": "ai.svg", "tooltip": "Show AI chat panel" },
+        "57": { "name": "terminal_panel", "label": "Terminal", "shortcut": "Ctrl+`", "icon": "terminal.svg", "tooltip": "Show terminal panel" },
+        "58": { "name": "problems_panel", "label": "Problems", "shortcut": "Ctrl+Shift+M", "icon": "problems.svg", "tooltip": "Show problems panel" },
+        "59": { "name": "output_panel", "label": "Output", "shortcut": "Ctrl+Shift+U", "icon": "output.svg", "tooltip": "Show output panel" },
+        "60": { "name": "settings_panel", "label": "Settings", "shortcut": "Ctrl+,", "icon": "settings.svg", "tooltip": "Open settings" }
+      }
+    },
+    
+    "git_operations": {
+      "description": "Version control operations",
+      "buttons": {
+        "61": { "name": "git_commit", "label": "Commit", "shortcut": "Ctrl+Enter", "icon": "commit.svg", "tooltip": "Commit changes" },
+        "62": { "name": "git_push", "label": "Push", "shortcut": "", "icon": "push.svg", "tooltip": "Push to remote" },
+        "63": { "name": "git_pull", "label": "Pull", "shortcut": "", "icon": "pull.svg", "tooltip": "Pull from remote" },
+        "64": { "name": "git_fetch", "label": "Fetch", "shortcut": "", "icon": "fetch.svg", "tooltip": "Fetch from remote" },
+        "65": { "name": "git_branch", "label": "New Branch", "shortcut": "", "icon": "branch.svg", "tooltip": "Create new branch" },
+        "66": { "name": "git_merge", "label": "Merge", "shortcut": "", "icon": "merge.svg", "tooltip": "Merge branches" },
+        "67": { "name": "git_stash", "label": "Stash", "shortcut": "", "icon": "stash.svg", "tooltip": "Stash changes" },
+        "68": { "name": "git_clone", "label": "Clone", "shortcut": "", "icon": "clone.svg", "tooltip": "Clone repository" },
+        "69": { "name": "git_diff", "label": "View Diff", "shortcut": "", "icon": "diff.svg", "tooltip": "View file differences" },
+        "70": { "name": "git_history", "label": "History", "shortcut": "", "icon": "history.svg", "tooltip": "View commit history" }
+      }
+    },
+    
+    "terminal_operations": {
+      "description": "Terminal and command operations",
+      "buttons": {
+        "71": { "name": "new_terminal", "label": "New Terminal", "shortcut": "Ctrl+Shift+`", "icon": "newterminal.svg", "tooltip": "Open new terminal" },
+        "72": { "name": "split_terminal", "label": "Split Terminal", "shortcut": "Ctrl+Shift+5", "icon": "splitterminal.svg", "tooltip": "Split terminal pane" },
+        "73": { "name": "kill_terminal", "label": "Kill Terminal", "shortcut": "", "icon": "killterminal.svg", "tooltip": "Close terminal instance" },
+        "74": { "name": "clear_terminal", "label": "Clear", "shortcut": "Ctrl+L", "icon": "clearterminal.svg", "tooltip": "Clear terminal output" },
+        "75": { "name": "terminal_cmd", "label": "Command Prompt", "shortcut": "", "icon": "cmd.svg", "tooltip": "Open CMD terminal" },
+        "76": { "name": "terminal_powershell", "label": "PowerShell", "shortcut": "", "icon": "powershell.svg", "tooltip": "Open PowerShell terminal" },
+        "77": { "name": "terminal_bash", "label": "Bash", "shortcut": "", "icon": "bash.svg", "tooltip": "Open Bash terminal" },
+        "78": { "name": "terminal_python", "label": "Python REPL", "shortcut": "", "icon": "python.svg", "tooltip": "Open Python interactive shell" },
+        "79": { "name": "terminal_node", "label": "Node.js REPL", "shortcut": "", "icon": "nodejs.svg", "tooltip": "Open Node.js interactive shell" },
+        "80": { "name": "run_task", "label": "Run Task", "shortcut": "Ctrl+Shift+P", "icon": "runtask.svg", "tooltip": "Run predefined task" }
+      }
+    },
+    
+    "ai_operations": {
+      "description": "AI assistant and automation",
+      "buttons": {
+        "81": { "name": "ai_chat", "label": "AI Chat", "shortcut": "Ctrl+Shift+A", "icon": "chat.svg", "tooltip": "Open AI chat interface" },
+        "82": { "name": "ai_code_review", "label": "Code Review", "shortcut": "", "icon": "review.svg", "tooltip": "AI code review" },
+        "83": { "name": "ai_explain", "label": "Explain Code", "shortcut": "", "icon": "explain.svg", "tooltip": "AI explain selected code" },
+        "84": { "name": "ai_generate", "label": "Generate Code", "shortcut": "", "icon": "generate.svg", "tooltip": "AI generate code" },
+        "85": { "name": "ai_optimize", "label": "Optimize", "shortcut": "", "icon": "optimize.svg", "tooltip": "AI optimize code" },
+        "86": { "name": "ai_document", "label": "Document", "shortcut": "", "icon": "document.svg", "tooltip": "AI generate documentation" },
+        "87": { "name": "ai_test", "label": "Generate Tests", "shortcut": "", "icon": "test.svg", "tooltip": "AI generate unit tests" },
+        "88": { "name": "ai_translate", "label": "Translate", "shortcut": "", "icon": "translate.svg", "tooltip": "AI translate code/comments" },
+        "89": { "name": "voice_input", "label": "Voice Input", "shortcut": "", "icon": "mic.svg", "tooltip": "Voice to text input" },
+        "90": { "name": "ai_settings", "label": "AI Settings", "shortcut": "", "icon": "aisettings.svg", "tooltip": "Configure AI assistant" }
+      }
+    },
+    
+    "window_controls": {
+      "description": "Application window management",
+      "buttons": {
+        "91": { "name": "minimize_window", "label": "Minimize", "shortcut": "", "icon": "minimize.svg", "tooltip": "Minimize window" },
+        "92": { "name": "maximize_window", "label": "Maximize", "shortcut": "", "icon": "maximize.svg", "tooltip": "Maximize window" },
+        "93": { "name": "restore_window", "label": "Restore", "shortcut": "", "icon": "restore.svg", "tooltip": "Restore window size" },
+        "94": { "name": "close_window", "label": "Close", "shortcut": "Alt+F4", "icon": "close.svg", "tooltip": "Close application" },
+        "95": { "name": "fullscreen", "label": "Fullscreen", "shortcut": "F11", "icon": "fullscreen.svg", "tooltip": "Toggle fullscreen mode" },
+        "96": { "name": "always_on_top", "label": "Always on Top", "shortcut": "", "icon": "pin.svg", "tooltip": "Keep window on top" },
+        "97": { "name": "new_window", "label": "New Window", "shortcut": "Ctrl+Shift+N", "icon": "newwindow.svg", "tooltip": "Open new IDE window" },
+        "98": { "name": "theme_toggle", "label": "Toggle Theme", "shortcut": "", "icon": "theme.svg", "tooltip": "Switch between light/dark theme" },
+        "99": { "name": "zoom_in", "label": "Zoom In", "shortcut": "Ctrl+=", "icon": "zoomin.svg", "tooltip": "Increase zoom level" },
+        "100": { "name": "zoom_out", "label": "Zoom Out", "shortcut": "Ctrl+-", "icon": "zoomout.svg", "tooltip": "Decrease zoom level" }
+      }
+    },
+    
+    "tools_utilities": {
+      "description": "Additional tools and utilities",
+      "buttons": {
+        "101": { "name": "command_palette", "label": "Command Palette", "shortcut": "Ctrl+Shift+P", "icon": "command.svg", "tooltip": "Open command palette" },
+        "102": { "name": "quick_open", "label": "Quick Open", "shortcut": "Ctrl+P", "icon": "quickopen.svg", "tooltip": "Quick open file" },
+        "103": { "name": "workspace_symbols", "label": "Workspace Symbols", "shortcut": "Ctrl+T", "icon": "symbols.svg", "tooltip": "Search workspace symbols" },
+        "104": { "name": "color_picker", "label": "Color Picker", "shortcut": "", "icon": "colorpicker.svg", "tooltip": "Pick color from screen" },
+        "105": { "name": "emoji_picker", "label": "Emoji Picker", "shortcut": "", "icon": "emoji.svg", "tooltip": "Insert emoji" },
+        "106": { "name": "markdown_preview", "label": "Markdown Preview", "shortcut": "Ctrl+Shift+V", "icon": "preview.svg", "tooltip": "Preview markdown file" },
+        "107": { "name": "json_formatter", "label": "Format JSON", "shortcut": "", "icon": "json.svg", "tooltip": "Format JSON document" },
+        "108": { "name": "xml_formatter", "label": "Format XML", "shortcut": "", "icon": "xml.svg", "tooltip": "Format XML document" },
+        "109": { "name": "regex_tester", "label": "Regex Tester", "shortcut": "", "icon": "regex.svg", "tooltip": "Test regular expressions" },
+        "110": { "name": "ascii_tree", "label": "ASCII Tree", "shortcut": "", "icon": "tree.svg", "tooltip": "Generate ASCII directory tree" }
+      }
+    },
+    
+    "preferences": {
+      "description": "Settings and configuration",
+      "buttons": {
+        "111": { "name": "user_settings", "label": "User Settings", "shortcut": "Ctrl+,", "icon": "settings.svg", "tooltip": "Open user settings" },
+        "112": { "name": "workspace_settings", "label": "Workspace Settings", "shortcut": "", "icon": "workspacesettings.svg", "tooltip": "Configure workspace" },
+        "113": { "name": "keyboard_shortcuts", "label": "Keyboard Shortcuts", "shortcut": "Ctrl+K Ctrl+S", "icon": "keyboard.svg", "tooltip": "Customize shortcuts" },
+        "114": { "name": "color_theme", "label": "Color Theme", "shortcut": "", "icon": "palette.svg", "tooltip": "Change color theme" },
+        "115": { "name": "icon_theme", "label": "Icon Theme", "shortcut": "", "icon": "icontheme.svg", "tooltip": "Change icon theme" },
+        "116": { "name": "font_settings", "label": "Font Settings", "shortcut": "", "icon": "font.svg", "tooltip": "Configure fonts" },
+        "117": { "name": "editor_settings", "label": "Editor Settings", "shortcut": "", "icon": "editorsettings.svg", "tooltip": "Configure editor behavior" },
+        "118": { "name": "extension_settings", "label": "Extension Settings", "shortcut": "", "icon": "extensionsettings.svg", "tooltip": "Manage extensions" },
+        "119": { "name": "sync_settings", "label": "Sync Settings", "shortcut": "", "icon": "sync.svg", "tooltip": "Sync settings across devices" },
+        "120": { "name": "reset_settings", "label": "Reset Settings", "shortcut": "", "icon": "reset.svg", "tooltip": "Reset to default settings" }
+      }
+    },
+    
+    "help_about": {
+      "description": "Help and information",
+      "buttons": {
+        "121": { "name": "help_docs", "label": "Documentation", "shortcut": "F1", "icon": "help.svg", "tooltip": "Open documentation" },
+        "122": { "name": "keyboard_reference", "label": "Keyboard Reference", "shortcut": "Ctrl+K Ctrl+R", "icon": "keyboardref.svg", "tooltip": "Show keyboard shortcuts" },
+        "123": { "name": "release_notes", "label": "Release Notes", "shortcut": "", "icon": "changelog.svg", "tooltip": "View release notes" },
+        "124": { "name": "report_issue", "label": "Report Issue", "shortcut": "", "icon": "bug.svg", "tooltip": "Report a bug" },
+        "125": { "name": "feature_request", "label": "Feature Request", "shortcut": "", "icon": "feature.svg", "tooltip": "Request new feature" },
+        "126": { "name": "check_updates", "label": "Check for Updates", "shortcut": "", "icon": "update.svg", "tooltip": "Check for updates" },
+        "127": { "name": "about_jadio", "label": "About JADIO", "shortcut": "", "icon": "info.svg", "tooltip": "About JADIO Code" },
+        "128": { "name": "license_info", "label": "License", "shortcut": "", "icon": "license.svg", "tooltip": "View license information" },
+        "129": { "name": "privacy_policy", "label": "Privacy Policy", "shortcut": "", "icon": "privacy.svg", "tooltip": "View privacy policy" },
+        "130": { "name": "contact_support", "label": "Contact Support", "shortcut": "", "icon": "support.svg", "tooltip": "Contact customer support" }
+      }
+    },
+    
+    "context_menu": {
+      "description": "Context menu and right-click actions",
+      "buttons": {
+        "131": { "name": "cut_context", "label": "Cut", "shortcut": "Ctrl+X", "icon": "cut.svg", "tooltip": "Cut selection" },
+        "132": { "name": "copy_context", "label": "Copy", "shortcut": "Ctrl+C", "icon": "copy.svg", "tooltip": "Copy selection" },
+        "133": { "name": "paste_context", "label": "Paste", "shortcut": "Ctrl+V", "icon": "paste.svg", "tooltip": "Paste from clipboard" },
+        "134": { "name": "delete_context", "label": "Delete", "shortcut": "Delete", "icon": "trash.svg", "tooltip": "Delete selection" },
+        "135": { "name": "rename_context", "label": "Rename", "shortcut": "F2", "icon": "rename.svg", "tooltip": "Rename file/folder" },
+        "136": { "name": "duplicate_context", "label": "Duplicate", "shortcut": "", "icon": "duplicate.svg", "tooltip": "Duplicate file/folder" },
+        "137": { "name": "reveal_in_explorer", "label": "Reveal in Explorer", "shortcut": "", "icon": "reveal.svg", "tooltip": "Show in file explorer" },
+        "138": { "name": "copy_path", "label": "Copy Path", "shortcut": "", "icon": "copypath.svg", "tooltip": "Copy file path" },
+        "139": { "name": "properties", "label": "Properties", "shortcut": "", "icon": "properties.svg", "tooltip": "Show file properties" },
+        "140": { "name": "open_with", "label": "Open With", "shortcut": "", "icon": "openwith.svg", "tooltip": "Open with external app" }
+      }
+    },
+    
+    "status_bar": {
+      "description": "Status bar interactive elements",
+      "buttons": {
+        "141": { "name": "line_column_indicator", "label": "Go to Line", "shortcut": "Ctrl+G", "icon": "gotoline.svg", "tooltip": "Click to go to line" },
+        "142": { "name": "encoding_selector", "label": "Encoding", "shortcut": "", "icon": "encoding.svg", "tooltip": "Change file encoding" },
+        "143": { "name": "eol_selector", "label": "End of Line", "shortcut": "", "icon": "eol.svg", "tooltip": "Change line endings" },
+        "144": { "name": "language_selector", "label": "Language Mode", "shortcut": "", "icon": "language.svg", "tooltip": "Change language mode" },
+        "145": { "name": "git_branch_status", "label": "Git Branch", "shortcut": "", "icon": "branch.svg", "tooltip": "Switch git branch" },
+        "146": { "name": "sync_status", "label": "Sync", "shortcut": "", "icon": "sync.svg", "tooltip": "Sync changes" },
+        "147": { "name": "problems_count", "label": "Problems", "shortcut": "Ctrl+Shift+M", "icon": "problems.svg", "tooltip": "Show problems panel" },
+        "148": { "name": "selection_count", "label": "Selection", "shortcut": "", "icon": "selection.svg", "tooltip": "Selection information" },
+        "149": { "name": "zoom_level", "label": "Zoom", "shortcut": "", "icon": "zoom.svg", "tooltip": "Adjust zoom level" },
+        "150": { "name": "live_share", "label": "Live Share", "shortcut": "", "icon": "liveshare.svg", "tooltip": "Start live collaboration" }
+      }
+    }
+  },
+  
+  "button_states": {
+    "normal": "Default button state",
+    "hover": "Mouse hover state", 
+    "pressed": "Button being clicked",
+    "disabled": "Button not available",
+    "active": "Button currently active/selected",
+    "loading": "Button performing action"
+  },
+  
+  "button_types": {
+    "primary": "Main action buttons (Save, Run, etc.)",
+    "secondary": "Supporting action buttons",
+    "icon": "Icon-only buttons (toolbar, sidebar)",
+    "text": "Text-only buttons (menus)",
+    "toggle": "On/off state buttons",
+    "dropdown": "Buttons with dropdown menus",
+    "context": "Right-click context menu items"
+  },
+  
+  "accessibility": {
+    "tab_order": "All buttons follow logical tab order",
+    "keyboard_navigation": "Full keyboard navigation support", 
+    "screen_reader": "ARIA labels and roles provided",
+    "high_contrast": "High contrast mode support",
+    "focus_indicators": "Clear focus indicators for all buttons"
+  }
+}

@@ -4,7 +4,7 @@ from PyQt6.QtGui import QFileSystemModel
 from PyQt6.QtCore import QModelIndex, Qt
 from .explorer_sidebar import ExplorerSidebar
 from .explorer_menu import ExplorerMenu
-from styles import Styles
+from style import Styles
 
 class ExplorerController(QWidget):
     def __init__(self, parent=None):
@@ -29,13 +29,8 @@ class ExplorerController(QWidget):
         self.menu = ExplorerMenu()
         content_layout.addWidget(self.menu)
 
-        # BOTTOM: File tree with centralized styles
+        # BOTTOM: File tree - styles already applied globally
         self.file_tree = QTreeView()
-        # Apply centralized tree and scrollbar styles
-        self.file_tree.setStyleSheet(f"""
-            {Styles.TREE_STYLE}
-            {Styles.SCROLLBAR_STYLE}
-        """)
 
         # File system model
         self.model = QFileSystemModel()
